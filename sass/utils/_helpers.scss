@@ -1,0 +1,11 @@
+.header.header--show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.hero-container.hero-container--stay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

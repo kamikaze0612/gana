@@ -1,0 +1,12 @@
+.section--hero {
+  height: 120vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url("../assets/images/hero-img.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
