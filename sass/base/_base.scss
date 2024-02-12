@@ -17,9 +17,12 @@ body {
   color: var(--color-text-primary);
   font-family: "Montserrat", sans-serif;
   position: relative;
-  height: 300vh;
 }
 
 .main {
   position: relative;
+}
+
+.main > * {
+  scroll-margin: 96px;
 }

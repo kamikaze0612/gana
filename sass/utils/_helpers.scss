@@ -5,7 +5,25 @@
 
 .hero-container.hero-container--stay {
   position: absolute;
-  top: 50%;
+  top: 90vh;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.about__img-box.show {
+  opacity: 1;
+  transform: rotateY(0) translate(0, -50%);
+}
+
+.about__content.show {
+  opacity: 1;
+}
+
+.about__details.show > #skills,
+.about__details.show > #hobbies {
+  opacity: 1;
 }

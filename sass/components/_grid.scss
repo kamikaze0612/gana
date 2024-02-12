@@ -1,0 +1,18 @@
+.grid {
+  display: grid;
+  column-gap: 4.8rem;
+  max-width: 156rem;
+  margin: 0 auto;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+
+  @include respond(large) {
+    max-width: 136rem;
+  }
+
+  &--about {
+    grid-template-columns: 40rem 1fr;
+    row-gap: 9.6rem;
+  }
+}

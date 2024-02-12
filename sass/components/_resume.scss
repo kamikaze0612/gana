@@ -1,0 +1,36 @@
+.resume {
+  height: 35rem;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("../assets/images/resume-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-text-white);
+
+  &__btn {
+    &:link,
+    &:visited {
+      @include format-anchors;
+      font-size: 2rem;
+      padding: 1.6rem 2.4rem;
+      border: 2px solid var(--color-text-white);
+      background-color: rgba(255, 255, 255, 0.2);
+      transition: all 0.3s;
+      font-weight: 500;
+    }
+
+    &:hover,
+    &:active {
+      background-color: rgba(255, 255, 255, 0.3);
+      padding: 1.2rem 3.2rem;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@mixin respond($device) {
+  @if $device == phone {
+    @media only screen and (max-width: 27em) {
+      @content;
+    }
+  }
+
+  @if $device == large {
+    @media only screen and (max-width: 105em) {
+      @content;
+    }
+  }
+}
+
+@mixin format-anchors {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
