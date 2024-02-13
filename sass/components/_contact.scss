@@ -1,0 +1,31 @@
+.contact {
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+.contact__text {
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.contact__btn {
+  &:link,
+  &:visited {
+    @include format-anchors;
+    padding: 1.6rem 2.4rem;
+    font-size: 1.6rem;
+    background-color: #fff;
+    border: 2px solid var(--color-text-light);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    transition: padding 0.4s;
+  }
+
+  &:hover,
+  &:active {
+    padding: 1.6rem 3.2rem;
+  }
+}

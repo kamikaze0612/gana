@@ -8,6 +8,7 @@ const aboutDetails = document.querySelector(".about__details");
 const projectsProjectsEl = document.querySelector(".section--projects");
 const skillsBox = document.getElementById("skills");
 const hobbiesBox = document.getElementById("hobbies");
+const allLinks = document.querySelectorAll("a:link");
 
 const windowHeight = heroContainer.clientHeight;
 
@@ -39,6 +40,21 @@ window.addEventListener("scroll", (e) => {
   } else {
     heroContainer.classList.remove("hero-container--stay");
   }
+});
+
+allLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    const href = link.getAttribute("href");
+
+    if (href === "#") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (href.startsWith("#")) {
+      e.preventDefault();
+      const targetEl = document.querySelector(href);
+      targetEl.scrollIntoView({ behavior: "smooth" });
+    }
+  });
 });
 
 const aboutContentObserver = new IntersectionObserver(

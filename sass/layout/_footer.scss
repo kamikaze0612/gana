@@ -20,12 +20,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-border-light);
+    background-color: var(--color-social-link);
     transition: background-color 0.3s;
 
     &:hover,
     &:active {
-      background-color: var(--color-text-hover);
+      background-color: var(--color-border-light);
       cursor: pointer;
     }
   }

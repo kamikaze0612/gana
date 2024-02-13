@@ -6,7 +6,11 @@
     <meta name="author" content="Buyantogtokh Bekhbayar" />
     <meta name="description" content="Gankhuyag's personal portfolio website" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png"
+    />
     <link
       rel="icon"
       type="image/png"
@@ -120,19 +124,19 @@
                 <div class="skill__box" role="row">
                   <p class="skill__name">CAD</p>
                   <div class="skills">
-                    <span class="about__skill">
+                    <span class="about__skill autocad">
                       <img
                         src="./assets/images/autocad.png"
                         alt="Logo of autocad"
                       />
                     </span>
-                    <span class="about__skill">
+                    <span class="about__skill archicad">
                       <img
                         src="./assets/images/archicad.png"
                         alt="Logo of archicad"
                       />
                     </span>
-                    <span class="about__skill">
+                    <span class="about__skill sketchup">
                       <img
                         src="./assets/images/sketchup.png"
                         alt="Logo of sketchup"
@@ -143,19 +147,19 @@
                 <div class="skill__box" role="row">
                   <p class="skill__name">Adobe</p>
                   <div class="skills">
-                    <span class="about__skill">
+                    <span class="about__skill illustrator">
                       <img
                         src="./assets/images/adobe-illustrator.png"
                         alt="Logo of adobe illustrator"
                       />
                     </span>
-                    <span class="about__skill">
+                    <span class="about__skill photoshop">
                       <img
                         src="./assets/images/adobe-photoshop.png"
                         alt="Logo of photoshop"
                       />
                     </span>
-                    <span class="about__skill">
+                    <span class="about__skill indesign">
                       <img
                         src="./assets/images/indesign.png"
                         alt="Logo of indesign"
@@ -166,13 +170,13 @@
                 <div class="skill__box" role="row">
                   <p class="skill__name">3D Render</p>
                   <div class="skills">
-                    <span class="about__skill">
+                    <span class="about__skill lumion">
                       <img
                         src="./assets/images/lumion.png"
                         alt="Logo of lumion"
                       />
                     </span>
-                    <span class="about__skill">
+                    <span class="about__skill twinmotion">
                       <img
                         src="./assets/images/twinmotion.png"
                         alt="Logo of twinmotion"
@@ -255,7 +259,7 @@
 
       <div class="resume">
         <h2 class="heading--secondary">Check out my resume</h2>
-        <a class="resume__btn" href="/resume.pdf">Get resume</a>
+        <a class="resume__btn" href="/CV.pdf">Get resume</a>
       </div>
 
       <!-- PROJECTS SECTION -->
@@ -267,6 +271,7 @@
             src="./assets/images/aete.jpg"
             alt="Project aete"
           />
+          <div class="project__layer"></div>
         </div>
         <div class="project">
           <img
@@ -274,6 +279,7 @@
             src="./assets/images/gathering-house.jpg"
             alt="Project gathering house"
           />
+          <div class="project__layer"></div>
         </div>
         <div class="project">
           <img
@@ -281,6 +287,7 @@
             src="./assets/images/quruwa.png"
             alt="Project quruwa"
           />
+          <div class="project__layer"></div>
         </div>
         <div class="project">
           <img
@@ -288,6 +295,7 @@
             src="./assets/images/open-school.jpg"
             alt="Project open school"
           />
+          <div class="project__layer"></div>
         </div>
         <div class="project">
           <img
@@ -295,6 +303,7 @@
             src="./assets/images/hut.jpg"
             alt="Project hut"
           />
+          <div class="project__layer"></div>
         </div>
         <div class="project">
           <img
@@ -302,25 +311,40 @@
             src="./assets/images/arch-environment.jpg"
             alt="Project arch environment"
           />
+          <div class="project__layer"></div>
         </div>
       </section>
 
       <!-- CONTACT SECTION -->
-      <section id="contact" class="section--contact"></section>
+      <section id="contact" class="section--contact">
+        <h2 class="heading--secondary">Contact me</h2>
+        <p class="contact__text">Let&apos;s talk...</p>
+        <a href="mailto: gankhuyag.tugs@gmail.com" class="contact__btn"
+          >Send an email
+          <svg
+            class="contact__icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 256 256"
+          >
+            <path
+              d="M227.32,28.68a16,16,0,0,0-15.66-4.08l-.15,0L19.57,82.84a16,16,0,0,0-2.42,29.84l85.62,40.55,40.55,85.62A15.86,15.86,0,0,0,157.74,248q.69,0,1.38-.06a15.88,15.88,0,0,0,14-11.51l58.2-191.94c0-.05,0-.1,0-.15A16,16,0,0,0,227.32,28.68ZM157.83,231.85l-.05.14L118.42,148.9l47.24-47.25a8,8,0,0,0-11.31-11.31L107.1,137.58,24,98.22l.14,0L216,40Z"
+            ></path></svg
+        ></a>
+      </section>
     </main>
 
     <!-- FOOTER -->
     <footer class="footer">
       <div class="footer__social-links">
         <span class="footer__social">
-          <a href="#">
+          <a target="_blank" href="https://www.instagram.com/tugs_ganhuyag/">
             <svg class="social__icon">
               <use xlink:href="/assets/images/sprite.svg#icon-instagram"></use>
             </svg>
           </a>
         </span>
         <span class="footer__social">
-          <a href="#">
+          <a target="_blank" href="https://www.facebook.com/ganhuyag.tugsbayar">
             <svg class="social__icon">
               <use
                 xlink:href="/assets/images/sprite.svg#icon-facebook-square"
@@ -329,14 +353,17 @@
           </a>
         </span>
         <span class="footer__social">
-          <a href="#">
+          <a target="_blank" href="https://line.me/ti/p/0SB58pBv4J">
             <svg class="social__icon">
               <use xlink:href="/assets/images/sprite.svg#icon-line"></use>
             </svg>
           </a>
         </span>
         <span class="footer__social">
-          <a href="#">
+          <a
+            target="_blank"
+            href="https://x.com/GankhuyagT?t=OBPz0fV1kWjH-YyWU-i82Q&s=09"
+          >
             <svg class="social__icon">
               <use xlink:href="/assets/images/sprite.svg#icon-x"></use>
             </svg>

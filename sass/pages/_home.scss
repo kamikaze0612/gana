@@ -21,12 +21,22 @@
   padding: 0 4.8rem;
   margin: 9.6rem 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 6.4rem;
 
   & .heading--secondary {
     grid-column: 1 / -1;
     text-align: center;
     margin-bottom: 3.2rem;
   }
+}
+
+.section--contact {
+  height: 30rem;
+  background-color: var(--color-text-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3.2rem;
 }

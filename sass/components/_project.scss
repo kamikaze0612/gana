@@ -1,10 +1,97 @@
 .project {
   width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.5s;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: var(--shadow-lg);
+    transform: scale(1.05);
+
+    .project__layer {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  &::after {
+    content: "";
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--color-text-white);
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    width: 100%;
+    display: block;
+    text-align: center;
+    transition: all 0.5s;
+  }
+
+  &:nth-child(2) {
+    &::after {
+      content: "aete";
+    }
+  }
+
+  &:nth-child(3) {
+    &::after {
+      content: "gathering house";
+    }
+  }
+
+  &:nth-child(4) {
+    &::after {
+      content: "quruwa";
+    }
+  }
+
+  &:nth-child(5) {
+    &::after {
+      content: "open school";
+    }
+  }
+
+  &:nth-child(6) {
+    &::after {
+      content: "hut for change of mood";
+    }
+  }
+
+  &:nth-child(7) {
+    &::after {
+      content: "Arch & environment";
+    }
+  }
+
+  &:hover::after {
+    opacity: 1;
+    top: 50%;
+  }
 
   &__img {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    height: 100%;
     object-fit: cover;
     object-position: center;
+  }
+
+  &__layer {
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    transition: background-color 0.3s;
   }
 }

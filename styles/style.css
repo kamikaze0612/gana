@@ -3,6 +3,7 @@
   --color-text-hover: #868e96;
   --color-text-light: #757575;
   --color-text-white: #f8f9fa;
+  --color-social-link: #e9ecef;
   --color-border-light: #ced4da;
   --color-white-transparent: rgba(255, 255, 255, 0.9);
   --shadow-sm: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
@@ -78,14 +79,123 @@ body {
   font-weight: 400;
 }
 
+@keyframes jiggle {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.contact__icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.contact__text {
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.contact__btn:link, .contact__btn:visited {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  padding: 1.6rem 2.4rem;
+  font-size: 1.6rem;
+  background-color: #fff;
+  border: 2px solid var(--color-text-light);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: padding 0.4s;
+}
+.contact__btn:hover, .contact__btn:active {
+  padding: 1.6rem 3.2rem;
+}
+
 .project {
   width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.5s;
+  position: relative;
+  cursor: pointer;
+}
+.project:hover {
+  box-shadow: var(--shadow-lg);
+  transform: scale(1.05);
+}
+.project:hover .project__layer {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.project::after {
+  content: "";
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: var(--color-text-white);
+  position: absolute;
+  top: 100%;
+  opacity: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  width: 100%;
+  display: block;
+  text-align: center;
+  transition: all 0.5s;
+}
+.project:nth-child(2)::after {
+  content: "aete";
+}
+.project:nth-child(3)::after {
+  content: "gathering house";
+}
+.project:nth-child(4)::after {
+  content: "quruwa";
+}
+.project:nth-child(5)::after {
+  content: "open school";
+}
+.project:nth-child(6)::after {
+  content: "hut for change of mood";
+}
+.project:nth-child(7)::after {
+  content: "Arch & environment";
+}
+.project:hover::after {
+  opacity: 1;
+  top: 50%;
 }
 .project__img {
   width: 100%;
-  aspect-ratio: 4/3;
+  height: 100%;
   object-fit: cover;
   object-position: center;
+}
+.project__layer {
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  transition: background-color 0.3s;
 }
 
 .resume {
@@ -182,6 +292,24 @@ body {
 .about__skill {
   width: 4.8rem;
   display: block;
+  position: relative;
+}
+.about__skill::after {
+  content: "";
+  font-size: 1.4rem;
+  width: max-content;
+  color: var(--color-text-primary);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, 0);
+  transition: all 0.3s;
+  z-index: -1;
+}
+.about__skill:hover::after {
+  opacity: 1;
+  top: 105%;
 }
 .about__skill img {
   width: 100%;
@@ -209,6 +337,9 @@ body {
 .about__hobby-name {
   font-size: 1.4rem;
 }
+.about__hobby:hover svg {
+  animation: jiggle 0.3s;
+}
 
 /* .about element does not EXIST */
 .skill__box {
@@ -227,6 +358,38 @@ body {
   display: flex;
   align-items: center;
   gap: 4.8rem;
+}
+
+.autocad::after {
+  content: "Autocad";
+}
+
+.archicad::after {
+  content: "Archicad";
+}
+
+.sketchup::after {
+  content: "Sketchup";
+}
+
+.illustrator::after {
+  content: "Illustrator";
+}
+
+.photoshop::after {
+  content: "Photoshop";
+}
+
+.indesign::after {
+  content: "Indesign";
+}
+
+.lumion::after {
+  content: "Lumion";
+}
+
+.twinmotion::after {
+  content: "Twinmotion";
 }
 
 #skills,
@@ -378,11 +541,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-border-light);
+  background-color: var(--color-social-link);
   transition: background-color 0.3s;
 }
 .footer__social:hover, .footer__social:active {
-  background-color: var(--color-text-hover);
+  background-color: var(--color-border-light);
   cursor: pointer;
 }
 .footer .social__icon {
@@ -424,13 +587,23 @@ body {
   padding: 0 4.8rem;
   margin: 9.6rem 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 6.4rem;
 }
 .section--projects .heading--secondary {
   grid-column: 1/-1;
   text-align: center;
   margin-bottom: 3.2rem;
+}
+
+.section--contact {
+  height: 30rem;
+  background-color: var(--color-text-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3.2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
