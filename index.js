@@ -13,7 +13,6 @@ const allLinks = document.querySelectorAll("a:link");
 const windowHeight = heroContainer.clientHeight;
 
 window.addEventListener("scroll", (e) => {
-  console.log(window.scrollY);
   if (window.scrollY > 0) {
     headerEl.classList.add("header--show");
   } else {
