@@ -38,8 +38,6 @@
 
   &__nav {
     transition: all 0.4s;
-    visibility: hidden;
-    pointer-events: none;
 
     @include respond(phone-lg) {
       position: absolute;
@@ -49,6 +47,8 @@
       z-index: 2000;
       top: 80px;
       background-color: var(--color-white-transparent);
+      visibility: hidden;
+      pointer-events: none;
     }
   }
 

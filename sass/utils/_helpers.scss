@@ -3,7 +3,10 @@
   opacity: 1;
 
   .header__burger {
-    display: block;
+    display: none;
+    @include respond(phone-lg) {
+      display: block;
+    }
   }
 }
 
