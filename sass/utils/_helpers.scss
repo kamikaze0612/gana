@@ -1,6 +1,21 @@
 .header.header--show {
   transform: translateY(0);
   opacity: 1;
+
+  .header__burger {
+    display: block;
+  }
+}
+
+.header__nav.nav-show {
+  width: 35vw;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+
+  & .nav__list {
+    display: flex;
+  }
 }
 
 .hero-container.hero-container--stay {
@@ -16,7 +31,24 @@
 
 .about__img-box.show {
   opacity: 1;
-  transform: rotateY(0) translate(0, -50%);
+  transform: rotateY(0);
+  bottom: 9.6rem;
+
+  @include respond(tablet) {
+    opacity: 1;
+    transform: none;
+    bottom: unset;
+  }
+}
+
+.about__img-box.stay {
+  position: absolute;
+  bottom: 0;
+
+  @include respond(tablet) {
+    position: relative;
+    bottom: unset;
+  }
 }
 
 .about__content.show {

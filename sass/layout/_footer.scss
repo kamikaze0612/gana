@@ -23,6 +23,11 @@
     background-color: var(--color-social-link);
     transition: background-color 0.3s;
 
+    @include respond(tablet-landscape) {
+      width: 4rem;
+      height: 4rem;
+    }
+
     &:hover,
     &:active {
       background-color: var(--color-border-light);
@@ -35,15 +40,28 @@
     height: 3.2rem;
     fill: var(--color-text-primary);
     filter: brightness(0);
+
+    @include respond(tablet-landscape) {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
   }
 
   &__copyright {
     font-size: 1.8rem;
+
+    @include respond(tablet-landscape) {
+      font-size: 1.6rem;
+    }
   }
 
   &__author {
     font-size: 1.6rem;
     color: var(--color-text-light);
+
+    @include respond(tablet-landscape) {
+      font-size: 1.4rem;
+    }
   }
 
   &__link:link,

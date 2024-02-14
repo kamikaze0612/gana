@@ -14,5 +14,14 @@
   &--about {
     grid-template-columns: 40rem 1fr;
     row-gap: 9.6rem;
+
+    @include respond(tablet-landscape) {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    @include respond(tablet) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }

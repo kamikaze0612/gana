@@ -8,6 +8,14 @@
 
 html {
   font-size: 62.5%;
+
+  @include respond(laptop-md) {
+    font-size: 56.25%;
+  }
+
+  @include respond(phone-lg) {
+    font-size: 50%;
+  }
 }
 
 body {

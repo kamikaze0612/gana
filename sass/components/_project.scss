@@ -2,11 +2,14 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   border-radius: 12px;
-  overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: all 0.5s;
   position: relative;
   cursor: pointer;
+
+  @include respond(tablet-landscape) {
+    margin-bottom: 4.8rem;
+  }
 
   &:hover {
     box-shadow: var(--shadow-lg);
@@ -33,6 +36,23 @@
     display: block;
     text-align: center;
     transition: all 0.5s;
+
+    @include respond(tablet-landscape) {
+      opacity: 1;
+      color: var(--color-text-primary);
+      top: 110%;
+      font-size: 2rem;
+      z-index: 9999;
+    }
+
+    @include respond(tablet) {
+      top: 105%;
+    }
+
+    @include respond(tablet) {
+      letter-spacing: 3px;
+      font-size: 1.8rem;
+    }
   }
 
   &:nth-child(2) {
@@ -81,6 +101,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    border-radius: 12px;
   }
 
   &__layer {

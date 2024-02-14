@@ -1,6 +1,7 @@
 .about {
   &__img-box {
-    width: 40rem;
+    width: 20vw;
+    aspect-ratio: 3 / 4;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow-lg);
@@ -9,9 +10,28 @@
     opacity: 0;
     transition: all 0.3s;
     position: fixed;
-    left: 20vh;
+    left: 15vw;
     transform: rotateY(180deg);
     backface-visibility: hidden;
+
+    @include respond(tablet-landscape) {
+      left: 10vw;
+      width: 25vw;
+    }
+
+    @include respond(tablet) {
+      width: 35vw;
+      position: relative;
+      align-self: center;
+      left: auto;
+      margin-bottom: 4.8rem;
+      opacity: 1;
+      transform: none;
+    }
+
+    @include respond(phone-lg) {
+      width: 50vw;
+    }
   }
 
   &__img {
@@ -29,6 +49,15 @@
     opacity: 0;
     transition: opacity 1s;
     grid-column: 2;
+
+    .heading--secondary {
+      margin-bottom: 2.4rem;
+    }
+
+    br {
+      display: block;
+      margin: 1.6rem 0;
+    }
   }
 
   &__text {
@@ -38,6 +67,15 @@
     color: var(--color-text-light);
     line-height: 1.6;
     white-space: pre-line;
+
+    @include respond(tablet-landscape) {
+      font-size: 1.6rem;
+      margin-top: 0;
+    }
+
+    @include respond(phone-lg) {
+      white-space: normal;
+    }
   }
 
   &__signature {
@@ -68,12 +106,20 @@
     display: flex;
     flex-direction: column;
     gap: 4.8rem;
+
+    @include respond(phone-lg) {
+      gap: 2.4rem;
+    }
   }
 
   &__skill {
     width: 4.8rem;
     display: block;
     position: relative;
+
+    @include respond(phone-lg) {
+      width: 3.2rem;
+    }
 
     &::after {
       content: "";
@@ -109,6 +155,12 @@
   &__hobbies-container {
     display: flex;
     gap: 4.8rem;
+
+    @include respond(phone-lg) {
+      gap: 2.4rem;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
   }
 
   &__hobby {
@@ -120,6 +172,11 @@
     svg {
       width: 4rem;
       height: 4rem;
+
+      @include respond(phone-lg) {
+        width: 3rem;
+        height: 3rem;
+      }
     }
 
     &-name {
@@ -140,17 +197,37 @@
   grid-template-columns: 16rem 1fr;
   column-gap: 2.4rem;
   align-items: center;
+
+  @include respond(tablet-landscape) {
+    grid-template-columns: 12rem 1fr;
+  }
 }
 
 .skill__name {
   font-size: 2.4rem;
   font-weight: 300;
+
+  @include respond(laptop-sm) {
+    font-size: 2rem;
+  }
+
+  @include respond(tablet-landscape) {
+    font-size: 1.8rem;
+  }
+
+  @include respond(phone-lg) {
+    font-size: 1.6rem;
+  }
 }
 
 .skills {
   display: flex;
   align-items: center;
   gap: 4.8rem;
+
+  @include respond(phone-lg) {
+    gap: 2.4rem;
+  }
 }
 
 .autocad::after {

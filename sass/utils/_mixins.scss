@@ -5,6 +5,36 @@
     }
   }
 
+  @if $device == phone-lg {
+    @media only screen and (max-width: 32em) {
+      @content;
+    }
+  }
+
+  @if $device == tablet {
+    @media only screen and (max-width: 56em) {
+      @content;
+    }
+  }
+
+  @if $device == tablet-landscape {
+    @media only screen and (max-width: 64em) {
+      @content;
+    }
+  }
+
+  @if $device == laptop-sm {
+    @media only screen and (max-width: 80em) {
+      @content;
+    }
+  }
+
+  @if $device == laptop-md {
+    @media only screen and (max-width: 90em) {
+      @content;
+    }
+  }
+
   @if $device == large {
     @media only screen and (max-width: 105em) {
       @content;

@@ -17,6 +17,10 @@
   opacity: 0;
   transform: translateY(-100%);
 
+  @include respond(tablet) {
+    padding: 0 3.2rem;
+  }
+
   &__logo-box {
     width: 60px;
     height: auto;
@@ -32,10 +36,32 @@
     width: 100%;
   }
 
+  &__nav {
+    transition: all 0.4s;
+    visibility: hidden;
+    pointer-events: none;
+
+    @include respond(phone-lg) {
+      position: absolute;
+      opacity: 0;
+      min-height: calc(100vh - 80px);
+      right: 0;
+      z-index: 2000;
+      top: 80px;
+      background-color: var(--color-white-transparent);
+    }
+  }
+
   .nav__list {
     list-style: none;
     display: flex;
     gap: 4.8rem;
+
+    @include respond(phone-lg) {
+      flex-direction: column;
+      padding: 2.4rem 1.6rem;
+      display: none;
+    }
   }
 
   .list-item {
@@ -79,5 +105,55 @@
   &__right {
     width: 125px;
     height: auto;
+  }
+
+  &__burger {
+    display: none;
+    height: 4rem;
+    width: 4rem;
+    background-color: var(--color-text-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .burger__btn {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .burger__line {
+    display: inline-block;
+    width: 2rem;
+    height: 2px;
+    background-color: var(--color-text-primary);
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      height: 2px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      display: inline-block;
+      background-color: var(--color-text-primary);
+    }
+
+    &::before {
+      top: -5px;
+    }
+
+    &::after {
+      bottom: -5px;
+    }
   }
 }

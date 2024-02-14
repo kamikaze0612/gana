@@ -15,6 +15,11 @@
   margin: 9.6rem 0;
   padding: 0 3.2rem;
   position: relative;
+
+  @include respond(tablet) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .section--projects {
@@ -24,10 +29,27 @@
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 6.4rem;
 
+  @include respond(tablet-landscape) {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  @include respond(tablet) {
+    padding: 0 6.4rem;
+  }
+
+  @include respond(phone-lg) {
+    padding: 0 2.4rem;
+    row-gap: 3.2rem;
+  }
+
   & .heading--secondary {
     grid-column: 1 / -1;
     text-align: center;
     margin-bottom: 3.2rem;
+
+    @include respond(tablet-landscape) {
+      margin-bottom: 0;
+    }
   }
 }
 

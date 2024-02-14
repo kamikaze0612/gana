@@ -1,4 +1,5 @@
 const headerEl = document.querySelector(".header");
+const headerNavEl = document.querySelector(".header__nav");
 const heroContainer = document.querySelector(".hero-container");
 const heroSectionEl = document.querySelector(".section--hero");
 const aboutSectionEl = document.querySelector(".section--about");
@@ -9,36 +10,29 @@ const projectsProjectsEl = document.querySelector(".section--projects");
 const skillsBox = document.getElementById("skills");
 const hobbiesBox = document.getElementById("hobbies");
 const allLinks = document.querySelectorAll("a:link");
-
-const windowHeight = heroContainer.clientHeight;
+const resumeEl = document.querySelector(".resume");
+const burgerBtn = document.querySelector(".burger__btn");
 
 window.addEventListener("scroll", (e) => {
+  console.log(window.scrollY);
+  console.log(heroSectionEl.clientHeight);
+  // Showing header if scrolled
   if (window.scrollY > 0) {
     headerEl.classList.add("header--show");
   } else {
     headerEl.classList.remove("header--show");
   }
 
-  if (
-    window.scrollY > heroSectionEl.clientHeight - headerEl.clientHeight &&
-    window.scrollY <
-      heroSectionEl.clientHeight +
-        aboutSectionEl.clientHeight -
-        0.6 * windowHeight
-  ) {
-    aboutImgBox.classList.add("show");
-    aboutImgBox.style.top = `${
-      window.scrollY - heroSectionEl.clientHeight + 320
-    }px`;
-  } else {
-    aboutImgBox.style.position = "absolute";
-  }
-
-  if (window.scrollY > 0.4 * windowHeight) {
+  // Managing hero section's position when scrolled over
+  if (window.scrollY >= 0.4 * window.innerHeight) {
     heroContainer.classList.add("hero-container--stay");
   } else {
     heroContainer.classList.remove("hero-container--stay");
   }
+});
+
+burgerBtn.addEventListener("click", (_e) => {
+  headerNavEl.classList.toggle("nav-show");
 });
 
 allLinks.forEach((link) => {
@@ -73,6 +67,41 @@ const aboutContentObserver = new IntersectionObserver(
   }
 );
 
-console.log("Hero height: ", heroSectionEl.clientHeight);
+const aboutContentFullObserver = new IntersectionObserver(
+  (entries) => {
+    const entry = entries[0];
+
+    if (entry.isIntersecting) {
+      aboutImgBox.classList.add("show");
+    } else if (
+      !entry.isIntersecting &&
+      window.scrollY < heroSectionEl.clientHeight
+    ) {
+      aboutImgBox.classList.remove("show");
+    }
+  },
+  {
+    threshold: 1,
+  }
+);
+
+const resumeElObserver = new IntersectionObserver(
+  (entries) => {
+    const entry = entries[0];
+
+    if (entry.isIntersecting) {
+      aboutImgBox.classList.add("stay");
+    } else {
+      window.scrollY <
+        aboutSectionEl.clientHeight + heroSectionEl.clientHeight &&
+        aboutImgBox.classList.remove("stay");
+    }
+  },
+  {
+    rootMargin: "-80px",
+  }
+);
 
 aboutContentObserver.observe(aboutContent);
+aboutContentFullObserver.observe(aboutContent);
+resumeElObserver.observe(resumeEl);

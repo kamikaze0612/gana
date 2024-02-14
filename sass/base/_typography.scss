@@ -2,10 +2,26 @@
   &--primary {
     font-size: 6.2rem;
     font-weight: 500;
+
+    @include respond(tablet-landscape) {
+      font-size: 5.2rem;
+    }
+
+    @include respond(phone-lg) {
+      font-size: 4.4rem;
+    }
   }
 
   &--secondary {
     font-size: 4.4rem;
     font-weight: 400;
+
+    @include respond(laptop-sm) {
+      font-size: 3.6rem;
+    }
+
+    @include respond(tablet-landscape) {
+      font-size: 3rem;
+    }
   }
 }
