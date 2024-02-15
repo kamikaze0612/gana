@@ -35,7 +35,7 @@
 .about__img-box.show {
   opacity: 1;
   transform: rotateY(0);
-  bottom: 9.6rem;
+  bottom: 80px;
 
   @include respond(tablet) {
     opacity: 1;

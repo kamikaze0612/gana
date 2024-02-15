@@ -81,9 +81,24 @@ const aboutContentFullObserver = new IntersectionObserver(
     }
   },
   {
-    threshold: 1,
+    threshold: 0.8,
   }
 );
+
+// const heroSectionObserver = new IntersectionObserver(
+//   (entries) => {
+//     const entry = entries[0];
+
+//     if (!entry.isIntersecting) {
+//       aboutImgBox.classList.add("show");
+//     } else {
+//       aboutImgBox.classList.remove("show");
+//     }
+//   },
+//   {
+//     rootMargin: "-240px",
+//   }
+// );
 
 const resumeElObserver = new IntersectionObserver(
   (entries) => {
@@ -98,10 +113,11 @@ const resumeElObserver = new IntersectionObserver(
     }
   },
   {
-    rootMargin: "-80px",
+    rootMargin: "80px",
   }
 );
 
 aboutContentObserver.observe(aboutContent);
 aboutContentFullObserver.observe(aboutContent);
+// heroSectionObserver.observe(heroSectionEl);
 resumeElObserver.observe(resumeEl);

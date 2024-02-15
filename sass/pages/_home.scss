@@ -42,6 +42,10 @@
     row-gap: 3.2rem;
   }
 
+  @include respond(phone) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
   & .heading--secondary {
     grid-column: 1 / -1;
     text-align: center;
