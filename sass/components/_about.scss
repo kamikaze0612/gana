@@ -61,16 +61,19 @@
   }
 
   &__text {
+    max-width: 600px;
     margin-top: 1.6rem;
     font-weight: 300;
     font-size: 1.8rem;
     color: var(--color-text-light);
     line-height: 1.6;
     white-space: pre-line;
+    hyphens: auto;
 
     @include respond(tablet-landscape) {
       font-size: 1.6rem;
       margin-top: 0;
+      max-width: 520px;
     }
 
     @include respond(phone-lg) {

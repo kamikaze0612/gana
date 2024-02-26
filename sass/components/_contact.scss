@@ -28,4 +28,18 @@
   &:active {
     padding: 1.6rem 3.2rem;
   }
+
+  &--tel {
+    &:link,
+    &:visited {
+      @include format-anchors;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1.5px solid currentColor;
+      padding-bottom: 4px;
+      gap: 0.8rem;
+    }
+  }
 }

@@ -14,8 +14,6 @@ const resumeEl = document.querySelector(".resume");
 const burgerBtn = document.querySelector(".burger__btn");
 
 window.addEventListener("scroll", (e) => {
-  console.log(window.scrollY);
-  console.log(heroSectionEl.clientHeight);
   // Showing header if scrolled
   if (window.scrollY > 0) {
     headerEl.classList.add("header--show");
@@ -84,21 +82,6 @@ const aboutContentFullObserver = new IntersectionObserver(
     threshold: 0.8,
   }
 );
-
-// const heroSectionObserver = new IntersectionObserver(
-//   (entries) => {
-//     const entry = entries[0];
-
-//     if (!entry.isIntersecting) {
-//       aboutImgBox.classList.add("show");
-//     } else {
-//       aboutImgBox.classList.remove("show");
-//     }
-//   },
-//   {
-//     rootMargin: "-240px",
-//   }
-// );
 
 const resumeElObserver = new IntersectionObserver(
   (entries) => {
